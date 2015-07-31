@@ -772,7 +772,7 @@ class TestCommands(TestCase):
         with self.settings(MAILER_EMAIL_BACKEND="django.core.mail.backends.locmem.EmailBackend"):
             mailer.send_mail("Subject", "Body", "test@example.com", ["r1@example.com"], queue=0)
 
-            self.assertEqual(Message.ojects.count(), 1)
+            self.assertEqual(Message.objects.count(), 1)
 
             call_command('send_mail')
 
